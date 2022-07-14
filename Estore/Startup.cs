@@ -8,6 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinessLayer.Models;
+using DataLayer.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 
 namespace Estore
 {
@@ -24,6 +28,20 @@ namespace Estore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+            services.AddDbContext<PRN211_DB_ASMContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("Conn"))
+            );
+            services.AddScoped<ICategoryRepository>(x =>
+                new CategoryRepository(x.GetRequiredService<PRN211_DB_ASMContext>()));
+            services.AddScoped<IMemberRepository>(x =>
+                new MemberRepository(x.GetRequiredService<PRN211_DB_ASMContext>()));
+            services.AddScoped<IProductRepository>(x =>
+                new ProductRepository(x.GetRequiredService<PRN211_DB_ASMContext>()));
+            services.AddScoped<IOrderDetailRepository>(x =>
+                new OrderDetailRepository(x.GetRequiredService<PRN211_DB_ASMContext>()));
+            services.AddScoped<IOrderRepository>(x =>
+                new OrderRepository(x.GetRequiredService<PRN211_DB_ASMContext>()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +62,7 @@ namespace Estore
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
