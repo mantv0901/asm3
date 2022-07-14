@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\huang\\OneDrive\\Desktop\\asm3\\asm3\\BusinessLayer\\BusinessLayer.csproj": {}
+    "D:\\FPT\\PRN211\\AssMent3\\asm3\\BusinessLayer\\BusinessLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\huang\\OneDrive\\Desktop\\asm3\\asm3\\BusinessLayer\\BusinessLayer.csproj": {
+    "D:\\FPT\\PRN211\\AssMent3\\asm3\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\huang\\OneDrive\\Desktop\\asm3\\asm3\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "D:\\FPT\\PRN211\\AssMent3\\asm3\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\huang\\OneDrive\\Desktop\\asm3\\asm3\\BusinessLayer\\BusinessLayer.csproj",
-        "packagesPath": "C:\\Users\\huang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\huang\\OneDrive\\Desktop\\asm3\\asm3\\BusinessLayer\\obj\\",
+        "projectPath": "D:\\FPT\\PRN211\\AssMent3\\asm3\\BusinessLayer\\BusinessLayer.csproj",
+        "packagesPath": "C:\\Users\\PhongNha\\.nuget\\packages\\",
+        "outputPath": "D:\\FPT\\PRN211\\AssMent3\\asm3\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\huang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PhongNha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,6 +43,28 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

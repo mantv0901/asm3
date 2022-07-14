@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FNs3cGqF40QiU/1Ozloh0V3wMsLz9M/xO1LZe+sOR97CmrGhGp3at1FxTYhTRgZOCkyKXJOx0NDwaHHksJP4Rg==",
+  "dgSpecHash": "RxCk9uevm7BSvefs0KmsIRhXOHkTN2bzhen6PJGOcV2ONaA/ySlWEO9XmHDu4YeYY/mZtgVGYn0itfgroRbygw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\huang\\OneDrive\\Desktop\\asm3\\asm3\\Estore\\Estore.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\FPT\\PRN211\\AssMent3\\asm3\\Estore\\Estore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PhongNha\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
   "logs": []
 }

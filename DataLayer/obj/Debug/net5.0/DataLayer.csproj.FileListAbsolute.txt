@@ -1,0 +1,12 @@
+D:\FPT\PRN211\AssMent3\asm3\DataLayer\bin\Debug\net5.0\DataLayer.deps.json
+D:\FPT\PRN211\AssMent3\asm3\DataLayer\bin\Debug\net5.0\DataLayer.dll
+D:\FPT\PRN211\AssMent3\asm3\DataLayer\bin\Debug\net5.0\DataLayer.pdb
+D:\FPT\PRN211\AssMent3\asm3\DataLayer\obj\Debug\net5.0\DataLayer.csproj.AssemblyReference.cache
+D:\FPT\PRN211\AssMent3\asm3\DataLayer\obj\Debug\net5.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT\PRN211\AssMent3\asm3\DataLayer\obj\Debug\net5.0\DataLayer.AssemblyInfoInputs.cache
+D:\FPT\PRN211\AssMent3\asm3\DataLayer\obj\Debug\net5.0\DataLayer.AssemblyInfo.cs
+D:\FPT\PRN211\AssMent3\asm3\DataLayer\obj\Debug\net5.0\DataLayer.csproj.CoreCompileInputs.cache
+D:\FPT\PRN211\AssMent3\asm3\DataLayer\obj\Debug\net5.0\DataLayer.dll
+D:\FPT\PRN211\AssMent3\asm3\DataLayer\obj\Debug\net5.0\refint\DataLayer.dll
+D:\FPT\PRN211\AssMent3\asm3\DataLayer\obj\Debug\net5.0\DataLayer.pdb
+D:\FPT\PRN211\AssMent3\asm3\DataLayer\obj\Debug\net5.0\ref\DataLayer.dll
