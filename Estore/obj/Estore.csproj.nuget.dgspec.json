@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FPT\\PRN211\\AssMent3\\asm3\\Estore\\Estore.csproj": {}
+    "D:\\Desktop\\Asm3\\asm3\\Estore\\Estore.csproj": {}
   },
   "projects": {
-    "D:\\FPT\\PRN211\\AssMent3\\asm3\\Estore\\Estore.csproj": {
+    "D:\\Desktop\\Asm3\\asm3\\Estore\\Estore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT\\PRN211\\AssMent3\\asm3\\Estore\\Estore.csproj",
+        "projectUniqueName": "D:\\Desktop\\Asm3\\asm3\\Estore\\Estore.csproj",
         "projectName": "Estore",
-        "projectPath": "D:\\FPT\\PRN211\\AssMent3\\asm3\\Estore\\Estore.csproj",
-        "packagesPath": "C:\\Users\\PhongNha\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT\\PRN211\\AssMent3\\asm3\\Estore\\obj\\",
+        "projectPath": "D:\\Desktop\\Asm3\\asm3\\Estore\\Estore.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Desktop\\Asm3\\asm3\\Estore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\PhongNha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -53,12 +53,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[5.0.17, 5.0.17]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -67,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
