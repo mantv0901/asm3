@@ -28,7 +28,7 @@ namespace BusinessLayer.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server = (local); Database = PRN211_DB_ASM; Uid = sa; Pwd = nhapvpse150408");
+                optionsBuilder.UseSqlServer("Server=.; Database = PRN211_DB_ASM; Uid = sa ; pwd =12345;");
             }
         }
 
@@ -74,6 +74,8 @@ namespace BusinessLayer.Models
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.Property(e => e.Status).HasColumnName("status");
             });
 
             modelBuilder.Entity<Order>(entity =>
@@ -88,6 +90,8 @@ namespace BusinessLayer.Models
 
                 entity.Property(e => e.ShippedDate).HasColumnType("datetime");
 
+                entity.Property(e => e.Status).HasColumnName("status");
+
                 entity.HasOne(d => d.Member)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.MemberId)
@@ -100,6 +104,8 @@ namespace BusinessLayer.Models
                 entity.HasKey(e => new { e.OrderId, e.ProductId });
 
                 entity.ToTable("OrderDetail");
+
+                entity.Property(e => e.Status).HasColumnName("status");
 
                 entity.Property(e => e.UnitPrice).HasColumnType("money");
 
@@ -125,11 +131,13 @@ namespace BusinessLayer.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Status).HasColumnName("status");
+
                 entity.Property(e => e.UnitPrice).HasColumnType("money");
 
                 entity.Property(e => e.Weight)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(50)
+                    .HasColumnName("weight");
 
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Products)

@@ -17,26 +17,32 @@ namespace DataLayer.Repository
             this.context = context;
         }
 
-        public void Add(OrderDetail orderDetail)
+        public async Task Add(OrderDetail orderDetail)
         {
             context.Add(orderDetail);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
-        public OrderDetail Get(Expression<Func<OrderDetail, bool>> predicate)
+        public Task<OrderDetail> Get(Expression<Func<OrderDetail, bool>> predicate)
         {
-            return context.OrderDetails.FirstOrDefault(predicate);
+            return context.OrderDetails
+                .Include(x => x.Order)
+                .Include(x => x.Product)
+                .FirstOrDefaultAsync(predicate);
         }
 
-        public List<OrderDetail> GetAll(Expression<Func<OrderDetail, bool>> expression)
+        public Task<List<OrderDetail>> GetAll(Expression<Func<OrderDetail, bool>> expression)
         {
-            return context.OrderDetails.Where(expression).ToList();
+            return context.OrderDetails.Where(expression)
+                .Include(x=> x.Order)
+                .Include(x=> x.Product)
+                .ToListAsync();
         }
 
-        public void Update(OrderDetail orderDetail)
+        public async Task Update(OrderDetail orderDetail)
         {
             context.Update(orderDetail);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
     }
 }

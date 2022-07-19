@@ -9,9 +9,9 @@ namespace DataLayer.Repository
 {
     public interface IProductRepository
     {
-        void Add(Product product);
-        void Update(Product product);
-        Product GetById(Expression<Func<Product, bool>> idExpression);
-        List<Product> GetAll(Expression<Func<Product,bool>> ex);
+        Task Add(Product product);
+        Task Update(Product product);
+        Task<Product> GetById(Expression<Func<Product, bool>> idExpression);
+        Task<List<Product>> GetAll(Expression<Func<Product,bool>> ex);
     }
 }

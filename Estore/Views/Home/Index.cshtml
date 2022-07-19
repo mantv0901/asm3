@@ -5,4 +5,10 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form asp-action="login">
+        <input name="email" placeholder="Email" /> <br />
+        <input name="password" placeholder="Password" type="password" /><br/>
+        <input value="Login" type="submit" />
+    </form>
+    <h3 style="color:red">@ViewData["Mess"]</h3>
 </div>

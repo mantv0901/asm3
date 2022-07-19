@@ -10,9 +10,9 @@ namespace DataLayer.Repository
 {
     public interface IOrderRepository
     {
-        void Add(Order order);
-        void Update(Order order);
-        Order Get(Expression<Func<Order, bool>> ex);
-        List<Order> GetAll(Expression<Func<Order, bool>> ex);
+        Task Add(Order order);
+        Task Update(Order order);
+        Task<Order> Get(Expression<Func<Order, bool>> ex);
+        Task<List<Order>> GetAll(Expression<Func<Order, bool>> ex);
     }
 }

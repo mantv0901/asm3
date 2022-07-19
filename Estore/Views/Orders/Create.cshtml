@@ -1,0 +1,110 @@
+﻿@model BusinessLayer.Models.Order
+@using Estore.DTOs
+@using Newtonsoft.Json;
+@using Microsoft.AspNetCore.Http;
+
+@{
+    ViewData["Title"] = "Create";
+    Dictionary<int, ProductDTO> cart = JsonConvert.DeserializeObject<Dictionary<int, ProductDTO>>
+                                            (Context.Session.GetString("Cart"));
+}
+
+<h1>Create</h1>
+
+<h4>Order</h4>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Product Name
+            </th>
+            <th>
+                UnitPrice
+            </th>
+            <th>
+                Weight
+            </th>
+            <th>
+                Category
+            </th> 
+            <th>
+                Quantity
+            </th>
+            
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (ProductDTO item in cart.Values) {
+        <tr>
+            <form action="ChangeCart">
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                <input type="hidden" name="ProductId" value="@item.ProductId"/>
+               <input type="number" name="quantity" value="@item.UnitsInStock" step="1" max="100" min="0" />
+            </td>
+                
+           
+            <td>
+                <input type="submit" value="Update"/>
+            </td>
+            </form>
+        </tr>
+}
+    </tbody>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MemberId" class="control-label"></label>
+                <select asp-for="MemberId" class ="form-control" asp-items="ViewBag.MemberId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDate" class="control-label"></label>
+                <input asp-for="OrderDate" class="form-control" />
+                <span asp-validation-for="OrderDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequiredDate" class="control-label"></label>
+                <input asp-for="RequiredDate" class="form-control" />
+                <span asp-validation-for="RequiredDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShippedDate" class="control-label"></label>
+                <input asp-for="ShippedDate" class="form-control" />
+                <span asp-validation-for="ShippedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Freight" class="control-label"></label>
+                <input asp-for="Freight" class="form-control" />
+                <span asp-validation-for="Freight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+        <h2 style="color:red">@ViewData["Mess"]</h2>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

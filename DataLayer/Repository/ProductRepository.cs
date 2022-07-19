@@ -17,30 +17,30 @@ namespace DataLayer.Repository
             this.context = context;
         }
 
-        public void Add(Product product)
+        public async Task Add(Product product)
         {
             context.Add(product);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
-        public List<Product> GetAll(Expression<Func<Product, bool>> ex)
+        public Task<List<Product>> GetAll(Expression<Func<Product, bool>> ex)
         {
             return context.Products.Where(ex)
                 .Include(x=> x.Category)
-                .ToList();
+                .ToListAsync();
         }
 
-        public Product GetById(Expression<Func<Product, bool>> idExpression)
+        public Task<Product> GetById(Expression<Func<Product, bool>> idExpression)
         {
             return context.Products
                 .Include(x=> x.Category)
-                .FirstOrDefault(idExpression);
+                .FirstOrDefaultAsync(idExpression);
         }
 
-        public void Update(Product product)
+        public async Task Update(Product product)
         {
             context.Update(product);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
     }
 }

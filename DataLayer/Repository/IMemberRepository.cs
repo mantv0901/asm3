@@ -9,10 +9,12 @@ namespace DataLayer.Repository
 {
     public interface IMemberRepository
     {
-        void Add(Member member);
-        Member Get(Expression <Func<Member,bool>> ex);
-        List<Member> GetAll(Expression<Func<Member, bool>> ex);
-        void Update(Member member);
+        Task Add(Member member);
+        Task<Member> Get(Expression <Func<Member,bool>> ex);
+        Task<List<Member>> GetAll(Expression<Func<Member, bool>> ex);
+        Task Update(Member member);
+        Task Delete(Member member);
+        //void Get(Expression<Func<Member, bool>> ex);
 
     }
 }

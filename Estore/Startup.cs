@@ -12,6 +12,7 @@ using BusinessLayer.Models;
 using DataLayer.Repository;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 namespace Estore
 {
@@ -28,10 +29,24 @@ namespace Estore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
+                x=>
+                {
+                    x.LoginPath = "/Home/Index";
+                }
+                );
+            services.AddSession();
             services.AddDbContext<PRN211_DB_ASMContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("Conn"))
             );
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new AutoMapperProfile());
+            });
+            IMapper mapper = config.CreateMapper();
+            services.AddSingleton(Configuration);
+            services.AddSingleton(mapper);
+
             services.AddScoped<ICategoryRepository>(x =>
                 new CategoryRepository(x.GetRequiredService<PRN211_DB_ASMContext>()));
             services.AddScoped<IMemberRepository>(x =>
@@ -59,6 +74,7 @@ namespace Estore
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 

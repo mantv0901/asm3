@@ -17,26 +17,33 @@ namespace DataLayer.Repository
             this.context = context;
         }
 
-        public void Add(Member member)
+        public async Task Add(Member member)
         {
             context.Members.Add(member);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
 
-        public Member Get(Expression<Func<Member, bool>> ex)
+        public  Task<Member> Get(Expression<Func<Member, bool>> ex)
         {
-            return context.Members.FirstOrDefault(ex);
+            return context.Members.FirstOrDefaultAsync(ex);
         }
 
-        public List<Member> GetAll(Expression<Func<Member, bool>> ex)
+        public Task<List<Member>> GetAll(Expression<Func<Member, bool>> ex)
         {
-            return context.Members.Where(ex).ToList();
+            return context.Members.Where(ex).ToListAsync();
         }
 
-        public void Update(Member member)
+        public async Task Update(Member member)
         {
             context.Members.Update(member);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
+        public async Task Delete(Member member)
+        {
+            context.Members.Remove(member);
+            await context.SaveChangesAsync();
+        }
+
+       
     }
 }
